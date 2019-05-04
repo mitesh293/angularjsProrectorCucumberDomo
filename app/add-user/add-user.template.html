@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" >
+<head>
+    <meta charset="UTF-8">
+    <title>Add user page</title>
+</head>
+<body >
+<div ng-controller="AddUserController" style="margin: 20px;">
+       <div > <h4 >View All User</h4></div>
+    <div class="">
+        <table class="table table-striped table-hover table-condensed table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">
+                    <input type="checkbox" ng-model="selectedAll" ng-value="true" ng-change="checkAll()" />
+                </th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Gender</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in userList">
+                <td class="text-center">
+                    <input type="checkbox" ng-model="user.selected" ng-change="setSelectedEmployee(employee)"/>
+                </td>
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.gender==true?'Male':'Female'}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<div style="max-width: 635px;">
+        <h4>Add User</h4>
+    <form class="form-horizontal" ng-submit="submit()">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="name" id="name" placeholder="Enter Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="Surname">Surname:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="surname" id="Surname" placeholder="Enter Surname">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" ng-model="email" placeholder="Enter email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Gender:</label>
+            <div class="radio col-sm-10">
+                <label><input id="male" type="radio" name="optradio" ng-model="gender" ng-value="true" checked>Male</label>
+
+                <label><input id="female" type="radio" name="optradio" ng-model="gender" ng-value="false">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+</div>
+</body>
+</html>

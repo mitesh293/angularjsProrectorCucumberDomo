@@ -4,7 +4,7 @@ exports.config = {
   allScriptsTimeout: 11000,
 
   specs: [
-    '*.js'
+    'add-user-spec.js'
   ],
 
   capabilities: {
@@ -17,6 +17,10 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
+  },
+  highlightDelay: 1000,
+  directConnect: false,
+  onPrepare: function () {
+    browser.manage().window().maximize(); // maximize the browser before executing the feature files
   }
-
 };

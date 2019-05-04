@@ -3,12 +3,12 @@
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'addUser'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-
-  $routeProvider.otherwise({redirectTo: '/view1'});
+config(['$routeProvider', function($routeProvider) {
+  $routeProvider.
+  when('/adduser', {
+    template: '<add-user></add-user>'
+  }).
+  otherwise('/');
 }]);
