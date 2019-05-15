@@ -70,7 +70,17 @@
         </div>
     </form>
 </div>
-
+<div style="float: left;">
+    <select class="custom-select" multiple="true" ng-model="firstGrid" 
+    ng-options="firstD.id as firstD.name for firstD in firstGridData" style="width:131px"/>
+</div>
+<div style="float: left;padding: 0px !important">
+<input style="margin:15px 9px 8px 12px;" type="button" ng-click="shiftLeft()" value=">"/>
+<input style="margin:15px 9px 8px 12px;" type="button" ng-click="shiftLeftAll()" value=">>"/>
+</div>
+<div style="float: left;">
+    <select style="width:131px" multiple="true" ng-model="secondGrid" ng-options="firstD.id as firstD.name for firstD in secondGrid"/>
+</div>
 
 </div>
 </body>
