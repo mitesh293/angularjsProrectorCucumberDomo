@@ -11,7 +11,7 @@ exports.config = {
 
     // Spec patterns are relative to this directory.
     specs: [
-        'features/*.feature'
+        'features/*-toggle.feature'
     ],
 
     baseURL: 'http://localhost:8000/',

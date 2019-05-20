@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
-  'addUser'
+  'addUser',
+  'ui.toggle'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.

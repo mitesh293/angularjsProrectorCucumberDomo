@@ -8,12 +8,14 @@ component('addUser', {
         $scope.name;
         $scope.surname;
         $scope.gender;
+        $scope.toggleModel;
 
         $scope.userList = [{'name':'Juliya','surname':'Wastson','email':'Joily.Wastan@gmail.com','gender':false},
                             {'name':'Michal','surname':'clark','email':'micky.clarl@hotmail.com','gender':true}];
 
         $scope.secondGrid=[];
         $scope.firstGrid;
+        $scope.submitDisable=true;
         $scope.firstGridData=[{id:'1',name:'Dealer'},{id:'2',name:'Model Year'},{id:'3',name:'Manufacturer'},{id:'4',name:'Collaterial'}];
 
     $scope.submit = function() {
@@ -25,6 +27,9 @@ component('addUser', {
         }
         console.log($scope.userList);
     };
+    $scope.onUpdateChange = function(){
+        $scope.submitDisable= !$scope.submitDisable;
+    }
 
     $scope.clearValues = function () {
         $scope.email="";

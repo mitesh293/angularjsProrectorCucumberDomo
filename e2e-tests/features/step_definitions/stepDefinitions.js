@@ -34,9 +34,21 @@ var expect = chai.expect;
        return element(by.id('submit')).click();
     });
 
+    When(/^I click the "([^"]*)" toggle button$/,{timeout: 100000}, function(task) {
+        var toggleButton = element(by.id('togglechkid'));
+        browser.sleep(1000);
+        toggleButton.click();
+        browser.sleep(1000);
+        toggleButton.click();
+        browser.sleep(1000);
+        return toggleButton.click();
+    });
+
+
     Then(/^I should see my "([^"]*)" new task in the list$/,{timeout: 100000}, function(task) {
         var userList = element.all(by.repeater('user in userList'));
         expect(userList.count()).to.eventually.equal(3);
+        browser.sleep(5000);
         if(task === "Mitesh")
             return expect(userList.get(2).getText()).to.eventually.equal('Mitesh Patel pmitesh293@gmail.com Male')
         else
